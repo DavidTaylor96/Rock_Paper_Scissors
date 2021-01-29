@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Let's play the game</h1>
+  <p>If you want to play the game what you will need to do is type "/game" into the url this will show the result of the ame.</p>
+  <div class="container">
+    <form action="/" method="post">
+      <label for="name">name</label>
+      <input type="text" name="name" class="input">
+
+      <label for="choice">Choice</label>
+      <input type="text" name="choice" class="input">
+
+      <input type="submit" value="Add Player!" id="button">
+    </form>
+  </div>
+  {% for game in games %}
+  <div>
+    <p>
+      {{ game.name }}, {{ game.choice }}
+    </p>
+  </div>
+  {% endfor %}
+{% endblock %}
