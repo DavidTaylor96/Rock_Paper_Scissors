@@ -2,22 +2,46 @@
 
 {% block content %}
   <h1>Let's play the game</h1>
-  <p>If you want to play the game what you will need to do is type "/game" into the url this will show the result of the ame.</p>
+
+  <p>Once you add two players, then you need to type "/game" into the url.</p>
+
+  <p>To see the result</p>
+
   <div class="container">
     <form action="/" method="post">
-      <label for="name">name</label>
-      <input type="text" name="name" class="input">
+      <label for="name1">Player1 name</label>
+      <input type="text" name="name1" class="input">
 
-      <label for="choice">Choice</label>
-      <input type="text" name="choice" class="input">
+      <label for="choice1">Player1 Choice</label>
+      <input type="text" name="choice1" class="input">
 
       <input type="submit" value="Add Player!" id="button">
     </form>
   </div>
-  {% for game in games %}
+
+  {% for game1 in game1 %}
   <div>
     <p>
-      {{ game.name }}, {{ game.choice }}
+      {{ game1.name }}, {{ game1.choice }}
+    </p>
+  </div>
+  {% endfor %}
+
+  <div class="container">
+    <form action="/" method="post">
+      <label for="name2">Player2 name</label>
+      <input type="text" name="name2" class="input">
+
+      <label for="choice2">Player2 Choice</label>
+      <input type="text" name="choice2" class="input">
+
+      <input type="submit" value="Add Player!" id="button">
+    </form>
+  </div>
+  {% for game2 in game2%}
+  <div>
+    <p>
+      {{ game2.name }}, {{ game2.choice }}
     </p>
   </div>
   {% endfor %}
