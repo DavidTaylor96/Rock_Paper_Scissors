@@ -9,8 +9,8 @@
 
   <div class="container">
     <form action="/" method="post">
-      <label for="name1">Player1 name</label>
-      <input type="text" name="name1" class="input">
+      <!-- <label for="name1">Player1 name</label>
+      <input type="text" name="name1" class="input"> -->
 
       <label for="choice1">Player1 Choice</label>
       <input type="text" name="choice1" class="input">
@@ -18,30 +18,10 @@
       <input type="submit" value="Add Player!" id="button">
     </form>
   </div>
-
-  {% for game1 in game1 %}
+  {% for game in games %}
   <div>
     <p>
-      {{ game1.name }}, {{ game1.choice }}
-    </p>
-  </div>
-  {% endfor %}
-
-  <div class="container">
-    <form action="/" method="post">
-      <label for="name2">Player2 name</label>
-      <input type="text" name="name2" class="input">
-
-      <label for="choice2">Player2 Choice</label>
-      <input type="text" name="choice2" class="input">
-
-      <input type="submit" value="Add Player!" id="button">
-    </form>
-  </div>
-  {% for game2 in game2%}
-  <div>
-    <p>
-      {{ game2.name }}, {{ game2.choice }}
+      {{ game.choice }}
     </p>
   </div>
   {% endfor %}
