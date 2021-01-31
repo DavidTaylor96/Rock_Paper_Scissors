@@ -9,8 +9,8 @@
 
   <div class="container">
     <form action="/" method="post">
-      <!-- <label for="name1">Player1 name</label>
-      <input type="text" name="name1" class="input"> -->
+      <label for="name1">Player1 name</label>
+      <input type="text" name="name" class="input">
 
       <label for="choice">Player1 Choice</label>
       <input type="text" name="choice" class="input">
@@ -21,7 +21,7 @@
   {% for game in games %}
   <div>
     <p>
-      {{ game.choice }}
+     {{ game.name }}, {{ game.choice }} 
     </p>
   </div>
   {% endfor %}
