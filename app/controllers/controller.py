@@ -10,9 +10,10 @@ def index():
 @app.route('/', methods=["POST"])
 def add_player1():
   # game_name = request.form["name1"]
-  game_choice = request.form["choice1"]
+  game_choice = request.form["choice"]
   new_player = Player(game_choice)
   player.append(new_player)
+  print('HHHH', str(request.form))
   return redirect('/')
 
 
@@ -24,23 +25,23 @@ def game():
   if player == computer_choice:
     return f"Player1 choice:{player}: {computer_choice}, Computer choice \nThis is a draw"
 
-  elif player == 'Rock':
+  elif player == ([('choice','Rock')]):
     if computer_choice == 'Scissors':
       return f"{player} Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer win is the Winner!!"
 
-  elif player == "Paper":
+  elif player == ([('choice','Paper')]):
     if computer_choice == "Rock":
       return f"{player}: Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer win is the Winner!!"
 
-  elif player == 'Rock':
+  elif player == ([('choice','Rock')]):
     if computer_choice == 'Scissors':
       return f"{player}:  Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer winsis the Winner!!"
   else:
-    return "Wrong Command!"
+    return "Come on you can do it. Don't give up yet!"
 
