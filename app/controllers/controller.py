@@ -22,24 +22,24 @@ def game():
   import random
   game_list = ['Rock', 'Paper', 'Scissors']
   computer_choice = random.choice(game_list)
-  if player.choice == computer_choice:
-    return f"Player1 choice:{player.choice}: {computer_choice}, Computer choice \nThis is a draw"
+  if player == computer_choice:
+    return f"Player1 choice:{player}: {computer_choice}, Computer choice \nThis is a draw"
 
-  elif player.choice == 'Rock':
+  elif player == 'Rock':
     if computer_choice == 'Scissors':
-      return f"{player.name} Player1 is the Winner!!"
+      return f"{player} Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer win is the Winner!!"
 
-  elif player.choice == 'Paper':
+  elif player == 'Paper':
     if computer_choice == "Rock":
-      return f"{player.name}: Player1 is the Winner!!"
+      return f"{player}: Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer win is the Winner!!"
 
-  elif player.choice == 'Rock':
+  elif player == 'Rock':
     if computer_choice == 'Scissors':
-      return f"{player.name}:  Player1 is the Winner!!"
+      return f"{player}:  Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer winsis the Winner!!"
   else:
