@@ -11,10 +11,10 @@ def index():
 def add_player1():
   game_choice = request.form["choice"]
   game_name = request.form["name"]
-  new_player = Player(game_choice, game_name)
+  new_player = Player(game_name, game_choice)
   player.append(new_player)
   print('HHHH', str(request.form))
-  return redirect('/')
+  return redirect('/game')
 
 
 @app.route('/game')
@@ -22,24 +22,33 @@ def game():
   import random
   game_list = ['Rock', 'Paper', 'Scissors']
   computer_choice = random.choice(game_list)
-  if player == computer_choice:
-    return f"Player1 choice:{player}: {computer_choice}, Computer choice \nThis is a draw"
+  print(computer_choice)
 
-  elif player == 'Rock':
+  # [Player{self.name, self.choice}]
+  current_player = player[0]
+
+  player_choice = current_player.choice
+  print('player choice:', player_choice)
+  player_name = current_player.name
+
+  if player_choice == computer_choice:
+    return f"Player1 choice:{player_name}: {computer_choice}, Computer choice \nThis is a draw"
+
+  elif player_choice == 'Rock':
     if computer_choice == 'Scissors':
-      return f"{player} Player1 is the Winner!!"
+      return f"{player_name} Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer win is the Winner!!"
 
-  elif player == 'Paper':
+  elif player_choice == 'Paper':
     if computer_choice == "Rock":
-      return f"{player}: Player1 is the Winner!!"
+      return f"{player_name}: Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer win is the Winner!!"
 
-  elif player == 'Rock':
+  elif player_choice == 'Rock':
     if computer_choice == 'Scissors':
-      return f"{player}:  Player1 is the Winner!!"
+      return f"{player_name}:  Player1 is the Winner!!"
     else:
       return f"{computer_choice} Computer winsis the Winner!!"
   else:
